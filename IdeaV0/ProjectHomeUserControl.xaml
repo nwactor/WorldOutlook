@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="IdeaV0.ProjectHomeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IdeaV0"
+             mc:Ignorable="d" 
+             x:Name="this"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" Name="Row1"></RowDefinition>
+            <RowDefinition Height="Auto" Name ="Row2"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="24*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ContentControl Name="SideBar" Grid.RowSpan="3" Grid.Column="0"/>
+        <StackPanel Name="TitlePanel" Grid.Row="0" Grid.Column="1">
+            <TextBlock Name="ProjectTitle" FontSize="50" Text="project title" TextAlignment="Center" TextDecorations="Underline"/>
+            <TextBlock Name="ProjectSubtitle" FontSize="15" Text="subtitle" TextAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,10">
+            <WrapPanel>
+                <Button Click="ClearFilters_Clicked">Clear Filters</Button>
+                <Label Name="TagsLabel">Tags:</Label>
+                <WrapPanel Name="TagsPanel"></WrapPanel>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" Margin="0,5,0,0">
+                <Label>Filter Mode:</Label>
+                <ToggleButton Name="OrToggle" Click="OrToggle_On" Margin="0,0,5,0">OR</ToggleButton>
+                <ToggleButton Name="AndToggle" Click="AndToggle_On" Margin="0,0,5,0">AND</ToggleButton>
+            </WrapPanel>
+        </StackPanel>
+        <Separator Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Top"></Separator>
+        <StackPanel Grid.Column="1" Grid.Row="3">
+            <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" Margin="10,5" FontWeight="DemiBold">Topics</TextBlock>
+            <ScrollViewer Name="FilterResultScrollViewer" Margin="25,10">
+                <WrapPanel Name="TopicPanel" Orientation="Vertical"/>
+            </ScrollViewer>
+        </StackPanel>
+        <WrapPanel Grid.RowSpan="3" Grid.Column="2" HorizontalAlignment="Right" Orientation="Vertical">
+            <Button Name="CreateNewTopicButoton" Margin="5" Click="NewTopic_Clicked">Create New Topic</Button>
+            <Button Name="CreateNewTagButton" Margin="5" Click="NewTag_Clicked">Create New Tag</Button>
+            <TextBox Name="NewTagInputBox" Margin="5" Visibility="Collapsed"></TextBox>
+            <Button Name="EditProjectButton" Margin="5">Edit Project</Button>
+            <Button Name="DeleteProjectButton" Click="DeleteProject_Clicked" Margin="5">Delete Project (debug)</Button>
+        </WrapPanel>
+    </Grid>
+</UserControl>

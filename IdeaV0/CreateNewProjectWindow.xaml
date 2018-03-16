@@ -1,0 +1,19 @@
+﻿<Window x:Class="IdeaV0.CreateNewProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IdeaV0"
+        mc:Ignorable="d"
+        Title="Create New Project" Height="200" Width="300">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.CreateProject" CanExecute="CreateProject_CanExecute" Executed="CreateProjectCommand_Executed" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top">
+            <Label>Title:</Label>
+            <TextBox Name ="TitleInput" MinWidth="100"></TextBox>
+        </WrapPanel>
+        <Button Name="CreateProjectButton" Command="local:CustomCommands.CreateProject" Height="20" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5">Create</Button>
+    </DockPanel>
+</Window>

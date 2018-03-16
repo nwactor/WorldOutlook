@@ -1,0 +1,66 @@
+﻿<local:RTBSupportingControlBase x:Class="IdeaV0.NewTopicUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IdeaV0"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.SaveTopic" CanExecute="CreateTopic_CanExecute" Executed="CreateTopic_Executed" />
+    </UserControl.CommandBindings>
+    <UserControl.InputBindings>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="local:CustomCommands.SaveTopic"/>
+    </UserControl.InputBindings>
+    <DockPanel>
+        <ContentControl Name="SideBar" DockPanel.Dock="Left"/>
+        <StackPanel DockPanel.Dock="Top">
+            <WrapPanel Name ="TitlePanel">
+                <Label>Title:</Label>
+                <TextBox Name="GivenTitleTextBox" Margin="2" Width="100"/>
+            </WrapPanel>
+            <WrapPanel Name="TagsPanel">
+                <TextBlock Margin="0,0,10,0">Tags:</TextBlock>
+                <Button Width="40" Height="18" Click="AddTag_Clicked">
+                    <Button.Content>Add</Button.Content>
+                    <Button.ContextMenu>
+                        <ContextMenu Name="TagOptionsDropDown"/>
+                    </Button.ContextMenu>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Name="ImagePanel" DockPanel.Dock="Right">
+            <Button Name="MainImageButton" Height="100" Width="100" Click="MainImage_Clicked">Insert Image</Button>
+            <Image Name="MainImage" MouseUp="MainImage_Clicked" MaxHeight="200" MaxWidth="200"></Image>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" DockPanel.Dock="Left">
+            <ToolBar>
+                <ToggleButton Name="boldButton" Click="BoldToggle_Clicked" FontWeight="Bold" Width="22" Height="22">B</ToggleButton>
+                <ToggleButton Name="italicButton" Click="ItalicToggle_Clicked" FontStyle="Italic" Width="22" Height="22">I</ToggleButton>
+                <ToggleButton Name="underlineButton" Click="UnderlineToggle_Clicked" Width="22" Height="22">
+                    <Underline>U</Underline>
+                </ToggleButton>
+                <ComboBox Name="fontTypeBox" SelectionChanged="FontTypeChanged" Width="150"></ComboBox>
+                <ComboBox Name="fontSizeBox" IsEditable="True" TextBoxBase.TextChanged="FontSizeChanged" Width="50"></ComboBox>
+            </ToolBar>
+            <local:BetterRichTextBox 
+                x:Name="TopicRichTextBox" 
+                SelectionChanged="RichTextBox_SelectionChanged" 
+                Margin="5" 
+                VerticalAlignment="Stretch"
+                MinHeight="225"
+                MaxHeight="500"
+                ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <local:BetterRichTextBox.CommandBindings>
+                    <CommandBinding Command="EditingCommands.ToggleBold" Executed="ToggleBold_Keyboard"></CommandBinding>
+                    <CommandBinding Command="EditingCommands.ToggleItalic" Executed="ToggleItalics_Keyboard"></CommandBinding>
+                    <CommandBinding Command="EditingCommands.ToggleUnderline" Executed="ToggleUnderline_Keyboard"></CommandBinding>
+                </local:BetterRichTextBox.CommandBindings>
+            </local:BetterRichTextBox>
+            <WrapPanel Name="ButtonsPanel" HorizontalAlignment="Right">
+                <Button Command="local:CustomCommands.SaveTopic">Create Topic</Button>
+                <Button Margin="5,0" Click="Cancel_Clicked">Cancel</Button>
+            </WrapPanel>
+        </StackPanel>
+    </DockPanel>
+</local:RTBSupportingControlBase>

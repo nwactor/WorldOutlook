@@ -1,0 +1,45 @@
+﻿<Window x:Class="IdeaV0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IdeaV0"
+        mc:Ignorable="d"
+        Background="AntiqueWhite"
+        Title="World Outlook" WindowState="Maximized">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.Exit" CanExecute="ExitCommand_CanExecute" Executed="ExitCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.BeginNewTopic" CanExecute="NewTopic_CanExecute" Executed="NewTopicCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.SaveTopic" CanExecute="SaveTopicCommand_CanExecute"/>
+        <CommandBinding Command="local:CustomCommands.BeginNewProject" CanExecute="NewProject_CanExecute" Executed="NewProjectCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.OpenOpenProjectWindow" CanExecute="OpenProject_CanExecute" Executed="OpenProjectWindowCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.Forward" CanExecute="ForwardButton_CanExecute" Executed="ForwardButton_Executed" />
+        <CommandBinding Command="local:CustomCommands.Back" CanExecute="BackButton_CanExecute" Executed="BackButton_Executed" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu Name="Menu1"  DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New">
+                    <MenuItem Header="Projet" Command="local:CustomCommands.BeginNewProject"/>
+                    <MenuItem Header="Topic" Command="local:CustomCommands.BeginNewTopic"/>
+                </MenuItem>
+                <MenuItem Header="Open" Command="local:CustomCommands.OpenOpenProjectWindow"/>
+                <MenuItem Header="Save" Command="local:CustomCommands.SaveTopic"/>
+                <Separator/>
+                <MenuItem Command="local:CustomCommands.Exit"/>
+            </MenuItem>
+            <MenuItem Header="Edit"></MenuItem>
+            <MenuItem Header="Preferences"></MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About"/>
+            </MenuItem>
+        </Menu>
+        <Menu Name="Menu2" DockPanel.Dock="Top">
+            <MenuItem Header="&lt;-" Command="local:CustomCommands.Back" FontSize="15" FontWeight="DemiBold"></MenuItem>
+            <MenuItem Header="->" Command="local:CustomCommands.Forward" FontSize="15" FontWeight="DemiBold"></MenuItem>
+        </Menu>
+        <ScrollViewer Name="TheWindowScrollBar">
+            <ContentControl Name="woDisplayedContent"/>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
