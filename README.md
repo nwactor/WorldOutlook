@@ -7,9 +7,9 @@ Proof-of-Concept
 
 ## Goal
 World Outlook was created as the answer to several questions concerning organization and productivity: 
-How can I access the information in my notes as quickly as possible, so that I don't interrupt my train of thought navigating to them? 
-How can I clearly and intuitively present it? 
-And how can I keep it all secure? 
+* How can I access the information in my notes as quickly as possible, so that I don't interrupt my train of thought navigating to them? 
+* How can I clearly and intuitively present it? 
+* And how can I keep it all secure? 
 There are other applications out there that offer similar things, but many have less flexible features, or store user data remotely. World Outlook is a tool for people who value the ability to self-structure, having everything in one place, and privacy.
 
 
@@ -31,36 +31,36 @@ of .Net. It stores the user's information locally in a SQLite database.
 
 
 ## Planned Features
-*Editing Project Info
-*Horizontal Line button for text-editor taskbar
-*Common formatting options for text-editor taskbar
-*Search Bar Functionality
-*Document linking/backup option
-*"About" page
-*Topic list heading display filters on project home
-*Image Gallery / Entire Image panel/frame
-*Templates  for topics (Including being able to set a default template for the project, or a tag)
-*Hyperlinking to another topic/project/location in text from text within a topic
+* Editing Project Info
+* Horizontal Line button for text-editor taskbar
+* Common formatting options for text-editor taskbar
+* Search Bar Functionality
+* Document linking/backup option
+* "About" page
+* Topic list heading display filters on project home
+* Image Gallery / Entire Image panel/frame
+* Templates  for topics (Including being able to set a default template for the project, or a tag)
+* Hyperlinking to another topic/project/location in text from text within a topic
 	(Window Popup with project, topic dropdown lists; project defaults to the current one, topic defaults to "choose topic")
-*Opening to last viewed page
-*Transfer topic to different project
-*Side-by-side topic view
-*Edit button, save topic button, etc follow the user as they scroll
-*Section-based topics instead of single document?
-*Asynchronous database access?
+* Opening to last viewed page
+* Transfer topic to different project
+* Side-by-side topic view
+* Edit button, save topic button, etc follow the user as they scroll
+* Section-based topics instead of single document?
+* Asynchronous database access?
 
 
 ## Known Bugs & Issues
-*Line Spacing on New Topic page
-*wrap Project Home topic blocks
-*Fix picutres saving in RTB
-*Escape should cancel editing
-*Finish adding keyboard shortcuts, less clunky ways to add tags
-*ctrl+n shouldn't work while editing, or should create a message box saying "are you sure you want to navigate away"
-*More text editing polishing  (the selection bug?)
-*App scrolling layout
-*Add home button to menu next to forward button
-*Auto-sort topic and tag lists when a new one is added  (binary insert)
+* Line Spacing on New Topic page
+* wrap Project Home topic blocks
+* Fix picutres saving in RTB
+* Escape should cancel editing
+* Finish adding keyboard shortcuts, less clunky ways to add tags
+* ctrl+n shouldn't work while editing, or should create a message box saying "are you sure you want to navigate away"
+* More text editing polishing  (the selection bug?)
+* App scrolling layout
+* Add home button to menu next to forward button
+* Auto-sort topic and tag lists when a new one is added  (binary insert)
 
 
 ## Author
