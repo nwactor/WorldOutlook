@@ -10,6 +10,7 @@ World Outlook was created as the answer to several questions concerning organiza
 * How can I access the information in my notes as quickly as possible, so that I don't interrupt my train of thought navigating to them? 
 * How can I clearly and intuitively present it? 
 * And how can I keep it all secure? 
+
 There are other applications out there that offer similar things, but many have less flexible features, or store user data remotely. World Outlook is a tool for people who value the ability to self-structure, having everything in one place, and privacy.
 
 
